@@ -1,0 +1,98 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<section id="about" class="py-5" style="margin-top: 100px; background-color: rgba(15, 23, 42, 0.5);">
+    <div class="container py-5">
+        <div class="row gx-5 align-items-start">
+            <!-- Left Column: Biography -->
+            <div class="col-md-6 mb-5 mb-md-0">
+                <h2 class="display-6 fw-bold text-light mb-4 d-flex align-items-center gap-3">
+                    <span class="rounded-pill" style="width: 48px; height: 4px; background-color: #10b981;"></span>
+                    About Me
+                </h2>
+                <p class="text-slate-400 fs-5 mb-4 lh-lg">
+                    Hello! I'm a Junior Fullstack Developer with a passion for building things that live on the internet. My interest in web development started back when I decided to try editing custom Tumblr themes — turns out hacking together HTML & CSS is fun!
+                </p>
+                <p class="text-slate-400 fs-5 mb-5 lh-lg">
+                    Fast-forward to today, and I've had the privilege of building software for a variety of clients. My main focus these days is building accessible, inclusive products and digital experiences.
+                </p>
+                
+                <div class="d-flex gap-3">
+                    <a href="#" class="text-slate-400 fs-4 p-2 rounded-circle" style="transition: all 0.2s;" onmouseover="this.className='text-emerald-400 fs-4 p-2 rounded-circle bg-slate-800'" onmouseout="this.className='text-slate-400 fs-4 p-2 rounded-circle'">
+                        <i class="bi bi-github"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 fs-4 p-2 rounded-circle" style="transition: all 0.2s;" onmouseover="this.className='text-emerald-400 fs-4 p-2 rounded-circle bg-slate-800'" onmouseout="this.className='text-slate-400 fs-4 p-2 rounded-circle'">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 fs-4 p-2 rounded-circle" style="transition: all 0.2s;" onmouseover="this.className='text-emerald-400 fs-4 p-2 rounded-circle bg-slate-800'" onmouseout="this.className='text-slate-400 fs-4 p-2 rounded-circle'">
+                        <i class="bi bi-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Column: Image and Skills -->
+            <div class="col-md-6 d-flex flex-column align-items-center align-items-md-end">
+                <!-- Headshot -->
+                <div class="mb-5 position-relative" style="width: 130px; height: 130px;">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 rounded-circle" style="background: linear-gradient(to right, rgba(16, 185, 129, 0.2), rgba(99, 102, 241, 0.2)); filter: blur(10px);"></div>
+                    <img 
+                        src="https://via.placeholder.com/400" 
+                        alt="Profile Headshot" 
+                        class="position-relative w-100 h-100 rounded-circle border border-2 shadow-lg"
+                        style="object-fit: cover; border-color: #1e293b !important; filter: grayscale(100%); transition: all 0.5s;"
+                        onmouseover="this.style.filter='grayscale(0%)'"
+                        onmouseout="this.style.filter='grayscale(100%)'"
+                    >
+                </div>
+
+                <!-- Tech Stack Card -->
+                <div class="card w-100 rounded-4 border-slate-800 shadow" style="background-color: #020617;">
+                    <div class="card-body p-4">
+                        <h3 class="h5 fw-semibold text-light mb-4">Tech Stack</h3>
+                        
+                        <!-- Frontend -->
+                        <div class="mb-4">
+                            <div class="d-flex align-items-center gap-2 mb-2 text-emerald-400 fw-medium small">
+                                <i class="bi bi-layout-sidebar"></i> Frontend
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge border border-slate-800 fw-normal py-2 text-slate-400" style="background-color: #0f172a;">React</span>
+                                <span class="badge border border-slate-800 fw-normal py-2 text-slate-400" style="background-color: #0f172a;">Tailwind CSS</span>
+                                <span class="badge border border-slate-800 fw-normal py-2 text-slate-400" style="background-color: #0f172a;">TypeScript</span>
+                                <span class="badge border border-slate-800 fw-normal py-2 text-slate-400" style="background-color: #0f172a;">Next.js</span>
+                            </div>
+                        </div>
+
+                        <!-- Backend -->
+                        <div class="mb-4">
+                            <div class="d-flex align-items-center gap-2 mb-2 text-emerald-400 fw-medium small">
+                                <i class="bi bi-server"></i> Backend
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge border border-slate-800 fw-normal py-2 text-slate-400" style="background-color: #0f172a;">Node.js</span>
+                                <span class="badge border border-slate-800 fw-normal py-2 text-slate-400" style="background-color: #0f172a;">Express</span>
+                                <span class="badge border border-slate-800 fw-normal py-2 text-slate-400" style="background-color: #0f172a;">Python</span>
+                                <span class="badge border border-slate-800 fw-normal py-2 text-slate-400" style="background-color: #0f172a;">PostgreSQL</span>
+                            </div>
+                        </div>
+
+                        <!-- Tools -->
+                        <div>
+                            <div class="d-flex align-items-center gap-2 mb-2 text-emerald-400 fw-medium small">
+                                <i class="bi bi-terminal"></i> Tools
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge border border-slate-800 fw-normal py-2 text-slate-400" style="background-color: #0f172a;">Git</span>
+                                <span class="badge border border-slate-800 fw-normal py-2 text-slate-400" style="background-color: #0f172a;">Docker</span>
+                                <span class="badge border border-slate-800 fw-normal py-2 text-slate-400" style="background-color: #0f172a;">AWS</span>
+                                <span class="badge border border-slate-800 fw-normal py-2 text-slate-400" style="background-color: #0f172a;">Figma</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

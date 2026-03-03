@@ -1,0 +1,159 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<section class="min-vh-100 pb-5" style="padding-top: 120px; padding-left: 1.5rem; padding-right: 1.5rem;">
+    <div class="container px-0" style="max-width: 1140px;">
+        
+        <!-- Web Applications Header -->
+        <div class="mb-5">
+            <h2 class="display-5 fw-bold text-light mb-3">Web Applications</h2>
+            <p class="text-slate-400 fs-5 mb-0" style="max-width: 700px;">
+                A collection of full-stack projects I've worked on. From simple landing pages to complex web applications.
+            </p>
+        </div>
+
+        <!-- Web Applications Grid -->
+        <div class="row g-4 mb-5 pb-4">
+            <!-- Project 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 bg-slate-900 border-slate-800 overflow-hidden text-light" style="border: 1px solid #1e293b; transition: all 0.3s;" onmouseover="this.style.borderColor='rgba(16, 185, 129, 0.5)'; this.style.transform='translateY(-5px)';" onmouseout="this.style.borderColor='#1e293b'; this.style.transform='none';">
+                    <div class="position-relative bg-slate-800 d-flex align-items-center justify-content-center" style="height: 192px;">
+                        <i class="bi bi-code text-secondary opacity-25" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h3 class="h5 fw-bold mb-0 hover-text-emerald">E-Commerce Dashboard</h3>
+                            <div class="d-flex gap-2">
+                                <a href="#" class="text-slate-400 hover-text-emerald"><i class="bi bi-github fs-5"></i></a>
+                                <a href="#" class="text-slate-400 hover-text-emerald"><i class="bi bi-box-arrow-up-right fs-5"></i></a>
+                            </div>
+                        </div>
+                        <p class="text-slate-400 small mb-4 flex-grow-1" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                            A full-stack admin dashboard for managing products, orders, and analytics. Features real-time data visualization.
+                        </p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge rounded-1 fw-normal text-monospace" style="color: rgba(52, 211, 153, 0.8); background: rgba(6, 78, 59, 0.3);">React</span>
+                            <span class="badge rounded-1 fw-normal text-monospace" style="color: rgba(52, 211, 153, 0.8); background: rgba(6, 78, 59, 0.3);">Node.js</span>
+                            <span class="badge rounded-1 fw-normal text-monospace" style="color: rgba(52, 211, 153, 0.8); background: rgba(6, 78, 59, 0.3);">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 bg-slate-900 border-slate-800 overflow-hidden text-light" style="border: 1px solid #1e293b; transition: all 0.3s;" onmouseover="this.style.borderColor='rgba(16, 185, 129, 0.5)'; this.style.transform='translateY(-5px)';" onmouseout="this.style.borderColor='#1e293b'; this.style.transform='none';">
+                    <div class="position-relative bg-slate-800 d-flex align-items-center justify-content-center" style="height: 192px;">
+                        <i class="bi bi-code text-secondary opacity-25" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h3 class="h5 fw-bold mb-0 hover-text-emerald">Task Master AI</h3>
+                            <div class="d-flex gap-2">
+                                <a href="#" class="text-slate-400 hover-text-emerald"><i class="bi bi-github fs-5"></i></a>
+                                <a href="#" class="text-slate-400 hover-text-emerald"><i class="bi bi-box-arrow-up-right fs-5"></i></a>
+                            </div>
+                        </div>
+                        <p class="text-slate-400 small mb-4 flex-grow-1" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                            Productivity application integrating OpenAI API to suggest sub-tasks and estimate completion times.
+                        </p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge rounded-1 fw-normal text-monospace" style="color: rgba(52, 211, 153, 0.8); background: rgba(6, 78, 59, 0.3);">Next.js</span>
+                            <span class="badge rounded-1 fw-normal text-monospace" style="color: rgba(52, 211, 153, 0.8); background: rgba(6, 78, 59, 0.3);">OpenAI API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 bg-slate-900 border-slate-800 overflow-hidden text-light" style="border: 1px solid #1e293b; transition: all 0.3s;" onmouseover="this.style.borderColor='rgba(16, 185, 129, 0.5)'; this.style.transform='translateY(-5px)';" onmouseout="this.style.borderColor='#1e293b'; this.style.transform='none';">
+                    <div class="position-relative bg-slate-800 d-flex align-items-center justify-content-center" style="height: 192px;">
+                        <i class="bi bi-code text-secondary opacity-25" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h3 class="h5 fw-bold mb-0 hover-text-emerald">HealthTracker</h3>
+                            <div class="d-flex gap-2">
+                                <a href="#" class="text-slate-400 hover-text-emerald"><i class="bi bi-github fs-5"></i></a>
+                                <a href="#" class="text-slate-400 hover-text-emerald"><i class="bi bi-box-arrow-up-right fs-5"></i></a>
+                            </div>
+                        </div>
+                        <p class="text-slate-400 small mb-4 flex-grow-1" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                            Mobile-first web app for tracking daily caloric intake and workout routines with social sharing features.
+                        </p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge rounded-1 fw-normal text-monospace" style="color: rgba(52, 211, 153, 0.8); background: rgba(6, 78, 59, 0.3);">Vue.js</span>
+                            <span class="badge rounded-1 fw-normal text-monospace" style="color: rgba(52, 211, 153, 0.8); background: rgba(6, 78, 59, 0.3);">Firebase</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Maps and Visualizations Header -->
+        <div class="mb-5">
+            <h2 class="display-6 fw-bold text-light mb-3">2D Maps & Visualizations</h2>
+            <p class="text-slate-400 fs-5 mb-0" style="max-width: 700px;">
+                Experiments with canvas, procedural generation, and interactive map interfaces.
+            </p>
+        </div>
+
+        <!-- Maps Grid -->
+        <div class="row g-4">
+            <!-- Map Project 1 -->
+            <div class="col-md-6">
+                <div class="card h-100 bg-slate-900 border-slate-800 overflow-hidden text-light" style="border: 1px solid #1e293b; transition: all 0.3s;" onmouseover="this.style.borderColor='rgba(16, 185, 129, 0.5)'; this.style.transform='translateY(-5px)';" onmouseout="this.style.borderColor='#1e293b'; this.style.transform='none';">
+                    <div class="position-relative bg-slate-800 d-flex align-items-center justify-content-center" style="height: 250px; background-image: radial-gradient(circle, #34d399 1px, transparent 1px); background-size: 20px 20px;">
+                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(15, 23, 42, 0.8);"></div>
+                        <i class="bi bi-map text-secondary opacity-50 position-relative z-1" style="font-size: 4rem;"></i>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h3 class="h5 fw-bold mb-0 hover-text-emerald">Procedural World Gen</h3>
+                            <div class="d-flex gap-2">
+                                <a href="#" class="text-slate-400 hover-text-emerald"><i class="bi bi-github fs-5"></i></a>
+                                <a href="#" class="text-slate-400 hover-text-emerald"><i class="bi bi-box-arrow-up-right fs-5"></i></a>
+                            </div>
+                        </div>
+                        <p class="text-slate-400 small mb-4 flex-grow-1">
+                            2D tile-map generator using Perlin noise algorithms to create infinite procedural terrain with biomes.
+                        </p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge rounded-1 fw-normal text-monospace" style="color: rgba(52, 211, 153, 0.8); background: rgba(6, 78, 59, 0.3);">Canvas API</span>
+                            <span class="badge rounded-1 fw-normal text-monospace" style="color: rgba(52, 211, 153, 0.8); background: rgba(6, 78, 59, 0.3);">Algorithms</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Project 2 -->
+            <div class="col-md-6">
+                <div class="card h-100 bg-slate-900 border-slate-800 overflow-hidden text-light" style="border: 1px solid #1e293b; transition: all 0.3s;" onmouseover="this.style.borderColor='rgba(16, 185, 129, 0.5)'; this.style.transform='translateY(-5px)';" onmouseout="this.style.borderColor='#1e293b'; this.style.transform='none';">
+                    <div class="position-relative bg-slate-800 d-flex align-items-center justify-content-center" style="height: 250px; background-image: radial-gradient(circle, #34d399 1px, transparent 1px); background-size: 20px 20px;">
+                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(15, 23, 42, 0.8);"></div>
+                        <i class="bi bi-terminal text-secondary opacity-50 position-relative z-1" style="font-size: 4rem;"></i>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h3 class="h5 fw-bold mb-0 hover-text-emerald">Pathfinding Visualizer</h3>
+                            <div class="d-flex gap-2">
+                                <a href="#" class="text-slate-400 hover-text-emerald"><i class="bi bi-github fs-5"></i></a>
+                                <a href="#" class="text-slate-400 hover-text-emerald"><i class="bi bi-box-arrow-up-right fs-5"></i></a>
+                            </div>
+                        </div>
+                        <p class="text-slate-400 small mb-4 flex-grow-1">
+                            Interactive 2D grid map demonstrating A* and Dijkstra pathfinding algorithms finding the shortest route.
+                        </p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge rounded-1 fw-normal text-monospace" style="color: rgba(52, 211, 153, 0.8); background: rgba(6, 78, 59, 0.3);">TypeScript</span>
+                            <span class="badge rounded-1 fw-normal text-monospace" style="color: rgba(52, 211, 153, 0.8); background: rgba(6, 78, 59, 0.3);">Data Structures</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
