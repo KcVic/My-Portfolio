@@ -5,9 +5,9 @@ class about(models.Model):
     title = models.CharField(max_length=100)
     body = models.TextField()
     profile_pic = models.ImageField(upload_to='images/')
-    github = models.CharField(max_length=500)
-    linkedin = models.CharField(max_length=500)
-    email = models.CharField(max_length=500)
+    github = models.URLField()
+    linkedin = models.URLField()
+    email = models.EmailField()
 
     def __str__(self):
         return self.title
