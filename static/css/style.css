@@ -1,0 +1,44 @@
+body {
+    background-color: #0f172a; /* slate-950 */
+    color: #e2e8f0; /* slate-200 */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Custom Colors */
+.text-emerald-400 { color: #34d399 !important; }
+.bg-emerald-500 { background-color: #10b981 !important; color: #020617; }
+.bg-emerald-500:hover { background-color: #34d399 !important; }
+.bg-slate-900 { background-color: #0f172a !important; }
+.bg-slate-800 { background-color: #1e293b !important; }
+.text-slate-400 { color: #94a3b8 !important; }
+.border-slate-800 { border-color: #1e293b !important; }
+
+/* Navbar specific styles */
+.navbar {
+    transition: all 0.3s ease-in-out;
+}
+.navbar.scrolled {
+    background-color: rgba(2, 6, 23, 0.9) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+.nav-link { 
+    color: #cbd5e1 !important; 
+    transition: color 0.2s;
+}
+.nav-link:hover, .nav-link.active { 
+    color: #34d399 !important; 
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #34d399, #06b6d4);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Utility classes */
+.hover-scale { transition: transform 0.2s; }
+.hover-scale:hover { transform: scale(1.05); }
+.hover-text-emerald:hover { color: #34d399 !important; }
