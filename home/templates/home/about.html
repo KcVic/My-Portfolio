@@ -8,30 +8,30 @@
             <div class="col-md-6 mb-5 mb-md-0">
                 <h2 class="display-6 fw-bold text-light mb-4 d-flex align-items-center gap-3">
                     <span class="rounded-pill" style="width: 48px; height: 4px; background-color: #10b981;"></span>
-                    About Me
+                    Hello, <em>"its me"</em>.
                 </h2>
-                <p class="text-slate-400 fs-5 mb-4 lh-lg">
-                    Hi, I'm a Fullstack Web Developer with a focus on backend architecture. 
+                <p class="text-slate-400 fs-5 small mb-4 lh-md">
+                    Kudos if you got the Adele reference. I'm Victor Akoma, a Fullstack Developer with a focus on backend architecture. 
                     While I enjoy building seamless user interfaces, my true strength lies in designing the robust databases, 
                     secure APIs, and server-side logic that make applications run flawlessly. 
                 </p>
-                <p class="text-slate-400 fs-5 mb-5 lh-lg">
+                <p class="text-slate-400 fs-5 small mb-5 lh-md">
                     I also bring a unique perspective to my code. I have a background as a GIS Developer and hold an MSc 
                     in Geographic Information Systems along with a diploma in Web Application Development. This means I don't just work with standard data, 
                     I specialize in spatial data. Whether it's integrating interactive maps, building location-based services, or performing spatial analysis, 
                     I love giving web applications a real-world geographic context.
                 </p>
-                <p class="text-slate-400 fs-5 mb-5 lh-lg">
+                <p class="text-slate-400 fs-5 small mb-5 lh-md">
                     At the end of the day, I build applications to solve real problems. I am driven by a desire to create web products that add genuine value to society. 
                     I am particularly passionate about partnering with Small and Medium-sized Enterprises (SMEs)—helping local businesses step confidently into their digital 
                     future with tools that actually help them grow and compete.
                 </p>
                 
                 <div class="d-flex gap-3">
-                    <a href="https://github.com/KcVic" class="text-slate-400 fs-4 p-2 rounded-circle" style="transition: all 0.2s;" onmouseover="this.className='text-emerald-400 fs-4 p-2 rounded-circle bg-slate-800'" onmouseout="this.className='text-slate-400 fs-4 p-2 rounded-circle'">
+                    <a href="https://github.com/KcVic" class="text-slate-400 fs-4 p-2 rounded-circle" style="transition: all 0.2s;" onmouseover="this.className='text-emerald-400 fs-4 p-2 rounded-circle bg-slate-800'" onmouseout="this.className='text-slate-400 fs-4 p-2 rounded-circle'" target="_blank">
                         <i class="bi bi-github"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/kenechukwu-akoma-740630312/" class="text-slate-400 fs-4 p-2 rounded-circle" style="transition: all 0.2s;" onmouseover="this.className='text-emerald-400 fs-4 p-2 rounded-circle bg-slate-800'" onmouseout="this.className='text-slate-400 fs-4 p-2 rounded-circle'">
+                    <a href="https://www.linkedin.com/in/kenechukwu-akoma-740630312/" class="text-slate-400 fs-4 p-2 rounded-circle" style="transition: all 0.2s;" onmouseover="this.className='text-emerald-400 fs-4 p-2 rounded-circle bg-slate-800'" onmouseout="this.className='text-slate-400 fs-4 p-2 rounded-circle'" target="_blank">
                         <i class="bi bi-linkedin"></i>
                     </a>
                     <a href="mailto: [EMAIL_ADDRESS]" class="text-slate-400 fs-4 p-2 rounded-circle" style="transition: all 0.2s;" onmouseover="this.className='text-emerald-400 fs-4 p-2 rounded-circle bg-slate-800'" onmouseout="this.className='text-slate-400 fs-4 p-2 rounded-circle'">
@@ -41,17 +41,15 @@
             </div>
 
             <!-- Right Column: Image and Skills -->
-            <div class="col-md-6 d-flex flex-column align-items-center align-items-md-end">
+            <div class="col-md-6 d-flex flex-column align-items-center text-center">
                 <!-- Headshot -->
-                <div class="mb-5 position-relative" style="width: 130px; height: 130px;">
+                <div class="mb-5 position-relative" style="width: 280px; height: 280px;">
                     <div class="position-absolute top-0 start-0 w-100 h-100 rounded-circle" style="background: linear-gradient(to right, rgba(16, 185, 129, 0.2), rgba(99, 102, 241, 0.2)); filter: blur(10px);"></div>
                     <img 
-                        src="media/images/headshot.jpg" 
+                        src="/media/images/headshot.jpg" 
                         alt="Profile Headshot" 
                         class="position-relative w-100 h-100 rounded-circle border border-2 shadow-lg"
-                        style="object-fit: cover; border-color: #1e293b !important; filter: grayscale(100%); transition: all 0.5s;"
-                        onmouseover="this.style.filter='grayscale(0%)'"
-                        onmouseout="this.style.filter='grayscale(100%)'"
+                        style="object-fit: cover; border-color: #1e293b !important;"
                     >
                 </div>
 
@@ -64,13 +62,13 @@
                             <div class="d-flex align-items-center gap-2 mb-2 text-emerald-400 fw-medium small">
                                 <i class="bi bi-layout-sidebar"></i> Frontend
                             </div>
-                            {% for skill in skill %}
-                            {% if skill.category == 'Frontend' %}
                             <div class="d-flex flex-wrap gap-2">
-                                <span class="badge border border-slate-800 fw-normal py-2 text-slate-400" style="background-color: #0f172a;">{{skill.name}}</span>
+                                {% for s in skill %}
+                                {% if s.category == 'frontend' %}
+                                <span class="badge border border-slate-800 fw-normal py-2 text-slate-400" style="background-color: #0f172a;">{{s.name}}</span>
+                                {% endif %}
+                                {% endfor %}
                             </div>
-                            {% endif %}
-                            {% endfor %}
                         </div>
 
                         <!-- Backend -->
@@ -78,13 +76,13 @@
                             <div class="d-flex align-items-center gap-2 mb-2 text-emerald-400 fw-medium small">
                                 <i class="bi bi-server"></i> Backend
                             </div>
-                            {% for skill in skill %}
-                            {% if skill.category == 'Backend' %}
                             <div class="d-flex flex-wrap gap-2">
-                                <span class="badge border border-slate-800 fw-normal py-2 text-slate-400" style="background-color: #0f172a;">{{skill.name}}</span>
+                                {% for s in skill %}
+                                {% if s.category == 'backend' %}
+                                <span class="badge border border-slate-800 fw-normal py-2 text-slate-400" style="background-color: #0f172a;">{{s.name}}</span>
+                                {% endif %}
+                                {% endfor %}
                             </div>
-                            {% endif %}
-                            {% endfor %}
                         </div>
 
                         <!-- Tools -->
@@ -92,13 +90,13 @@
                             <div class="d-flex align-items-center gap-2 mb-2 text-emerald-400 fw-medium small">
                                 <i class="bi bi-terminal"></i> Tools
                             </div>
-                            {% for skill in skill %}
-                            {% if skill.category == 'Tools' %}
                             <div class="d-flex flex-wrap gap-2">
-                                <span class="badge border border-slate-800 fw-normal py-2 text-slate-400" style="background-color: #0f172a;">{{skill.name}}</span>
+                                {% for s in skill %}
+                                {% if s.category == 'tools' %}
+                                <span class="badge border border-slate-800 fw-normal py-2 text-slate-400" style="background-color: #0f172a;">{{s.name}}</span>
+                                {% endif %}
+                                {% endfor %}
                             </div>
-                            {% endif %}
-                            {% endfor %}
                         </div>
                     </div>
                 </div>
