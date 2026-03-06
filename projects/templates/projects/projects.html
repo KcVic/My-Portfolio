@@ -3,8 +3,6 @@
 {% block content %}
 <section class="min-vh-100 pb-5" style="padding-top: 120px; padding-left: 1.5rem; padding-right: 1.5rem;">
     <div class="container px-0" style="max-width: 1140px;">
-    {% for project in projects %}
-        {% if project.category == 'webapps' %}
         <!-- Web Applications Header -->
         <div class="mb-5">  
             <h2 class="display-5 fw-bold text-light mb-3">Web Applications</h2>
@@ -13,33 +11,57 @@
             </p>
         </div>
         <!-- Web Applications Grid -->
-        <div class="row g-4 mb-5 pb-4">
-            <div class="col-md-6 col-lg-4">
+        <div class="d-flex flex-nowrap overflow-auto gap-4 mb-5 pb-4 hide-scrollbar">
+        {% for project in projects %}
+            {% if project.category == 'webapps' %}
+            <div class="col-11 col-md-6 col-lg-4 flex-shrink-0" style="max-width: 400px;">
                 <div class="card h-100 bg-slate-900 border-slate-800 overflow-hidden text-light" style="border: 1px solid #1e293b; transition: all 0.3s;" onmouseover="this.style.borderColor='rgba(16, 185, 129, 0.5)'; this.style.transform='translateY(-5px)';" onmouseout="this.style.borderColor='#1e293b'; this.style.transform='none';">
-                    <div class="position-relative bg-slate-800 d-flex align-items-center justify-content-center" style="height: 192px;">
-                        <img src="{{project.image.url}}" alt="{{project.title}}" class="img-fluid">
-                    </div>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal{{project.id}}">
+                        <div class="position-relative bg-slate-800 d-flex align-items-center justify-content-center overflow-hidden" style="height: 192px;">
+                            <img src="{{project.image.url}}" alt="{{project.title}}" class="img-fluid w-100 h-100" style="object-fit: cover;">
+                        </div>
+                    </a>
                     <div class="card-body p-4 d-flex flex-column">
                         <div class="d-flex justify-content-between align-items-start mb-3">
                             <h3 class="h5 fw-bold mb-0 hover-text-emerald">{{project.title}}</h3>
                             <div class="d-flex gap-2">
-                                <a href="{{project.github_url}}" class="text-slate-400 hover-text-emerald"><i class="bi bi-github fs-5"></i></a>
-                                <a href="{{project.live_url}}" class="text-slate-400 hover-text-emerald"><i class="bi bi-box-arrow-up-right fs-5"></i></a>
+                                {% if project.github_link %}
+                                <a href="{{project.github_link}}" class="text-slate-400 hover-text-emerald" target="_blank"><i class="bi bi-github fs-5"></i></a>
+                                {% endif %}
+                                {% if project.link %}
+                                <a href="{{project.link}}" class="text-slate-400 hover-text-emerald" target="_blank"><i class="bi bi-box-arrow-up-right fs-5"></i></a>
+                                {% endif %}
                             </div>
                         </div>
                         <p class="text-slate-400 small mb-4 flex-grow-1" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
-                            {{project.description}}
+                            {{project.description|striptags}}
                         </p>
                         <div class="d-flex flex-wrap gap-2">
                             <span class="badge rounded-1 fw-normal text-monospace" style="color: rgba(52, 211, 153, 0.8); background: rgba(6, 78, 59, 0.3);">{{project.technology}}</span>
                         </div>
                     </div>
                 </div>
+
+                <!-- Modal for WebApp -->
+                <div class="modal fade" id="imageModal{{project.id}}" tabindex="-1" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content bg-transparent border-0">
+                      <div class="modal-header border-0 pb-0">
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body text-center p-0">
+                        <img src="{{project.image.url}}" class="img-fluid rounded shadow-lg" alt="{{project.title}}">
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
+            {% endif %}
+        {% endfor %}
         </div>
-        {% else %}
+
         <!-- Maps and Visualizations Header -->
-        <div class="mb-5">
+        <div class="mb-5 mt-5">
             <h2 class="display-6 fw-bold text-light mb-3">2D Maps & Visualizations</h2>
             <p class="text-slate-400 fs-5 mb-0" style="max-width: 700px;">
                 Experiments with canvas, procedural generation, and interactive map interfaces.
@@ -47,34 +69,53 @@
         </div>
 
         <!-- Maps Grid -->
-        <div class="row g-4">
-            <!-- Map Project 1 -->
-            <div class="col-md-6">
+        <div class="d-flex flex-nowrap overflow-auto gap-4 mb-5 pb-4 hide-scrollbar">
+        {% for project in projects %}
+            {% if project.category == 'maps' %}
+            <div class="col-11 col-md-6 col-lg-4 flex-shrink-0" style="max-width: 400px;">
                 <div class="card h-100 bg-slate-900 border-slate-800 overflow-hidden text-light" style="border: 1px solid #1e293b; transition: all 0.3s;" onmouseover="this.style.borderColor='rgba(16, 185, 129, 0.5)'; this.style.transform='translateY(-5px)';" onmouseout="this.style.borderColor='#1e293b'; this.style.transform='none';">
-                    <div class="position-relative bg-slate-800 d-flex align-items-center justify-content-center" style="height: 250px; background-image: radial-gradient(circle, #34d399 1px, transparent 1px); background-size: 20px 20px;">
-                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(15, 23, 42, 0.8);"></div>
-                        <img src="{{project.image.url}}" alt="{{project.title}}" class="img-fluid">
-                    </div>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal{{project.id}}">
+                        <div class="position-relative bg-slate-800 d-flex align-items-center justify-content-center overflow-hidden" style="height: 250px; background-image: radial-gradient(circle, #34d399 1px, transparent 1px); background-size: 20px 20px;">
+                            <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(15, 23, 42, 0.8);"></div>
+                            <img src="{{project.image.url}}" alt="{{project.title}}" class="img-fluid w-100 h-100" style="object-fit: cover; position: relative; z-index: 2;">
+                        </div>
+                    </a>
                     <div class="card-body p-4 d-flex flex-column">
                         <div class="d-flex justify-content-between align-items-start mb-3">
                             <h3 class="h5 fw-bold mb-0 hover-text-emerald">{{project.title}}</h3>
                             <div class="d-flex gap-2">
-                                <a href="#" class="text-slate-400 hover-text-emerald"><i class="bi bi-github fs-5"></i></a>
-                                <a href="#" class="text-slate-400 hover-text-emerald"><i class="bi bi-box-arrow-up-right fs-5"></i></a>
+                                {% if project.pdf %}
+                                <a href="{% url 'download_pdf' project.pk %}" class="text-slate-400 hover-text-emerald">Download File</a>
+                                {% endif %}
+                                
                             </div>
                         </div>
-                        <p class="text-slate-400 small mb-4 flex-grow-1">
-                            {{project.description}}
+                        <p class="text-slate-400 small mb-4 flex-grow-1" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                            {{project.description|striptags}}
                         </p>
                         <div class="d-flex flex-wrap gap-2">
                             <span class="badge rounded-1 fw-normal text-monospace" style="color: rgba(52, 211, 153, 0.8); background: rgba(6, 78, 59, 0.3);">{{project.technology}}</span>
                         </div>
                     </div>
                 </div>
+
+                <!-- Modal for Map -->
+                <div class="modal fade" id="imageModal{{project.id}}" tabindex="-1" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content bg-transparent border-0">
+                      <div class="modal-header border-0 pb-0">
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body text-center p-0">
+                        <img src="{{project.image.url}}" class="img-fluid rounded shadow-lg" alt="{{project.title}}">
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
+            {% endif %}
+        {% endfor %}
         </div>
-        {% endif %}
-    {% endfor %}
     </div>
 </section>
 {% endblock %}

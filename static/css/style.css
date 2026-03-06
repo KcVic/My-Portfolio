@@ -42,3 +42,12 @@ body {
 .hover-scale { transition: transform 0.2s; }
 .hover-scale:hover { transform: scale(1.05); }
 .hover-text-emerald:hover { color: #34d399 !important; }
+
+/* Hidden Scrollbar while allowing scroll */
+.hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
