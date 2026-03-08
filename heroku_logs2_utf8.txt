@@ -1,0 +1,100 @@
+﻿2026-03-08T01:07:25.983851+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.14/site-packages/gunicorn/arbiter.py", line 708, in spawn_worker
+2026-03-08T01:07:25.983851+00:00 app[web.1]: worker.init_process()
+2026-03-08T01:07:25.983852+00:00 app[web.1]: ~~~~~~~~~~~~~~~~~~~^^
+2026-03-08T01:07:25.983852+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.14/site-packages/gunicorn/workers/base.py", line 136, in init_process
+2026-03-08T01:07:25.983853+00:00 app[web.1]: self.load_wsgi()
+2026-03-08T01:07:25.983853+00:00 app[web.1]: ~~~~~~~~~~~~~~^^
+2026-03-08T01:07:25.983853+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.14/site-packages/gunicorn/workers/base.py", line 148, in load_wsgi
+2026-03-08T01:07:25.983854+00:00 app[web.1]: self.wsgi = self.app.wsgi()
+2026-03-08T01:07:25.983854+00:00 app[web.1]: ~~~~~~~~~~~~~^^
+2026-03-08T01:07:25.983855+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.14/site-packages/gunicorn/app/base.py", line 66, in wsgi
+2026-03-08T01:07:25.983855+00:00 app[web.1]: self.callable = self.load()
+2026-03-08T01:07:25.983855+00:00 app[web.1]: ~~~~~~~~~^^
+2026-03-08T01:07:25.983855+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.14/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+2026-03-08T01:07:25.983855+00:00 app[web.1]: return self.load_wsgiapp()
+2026-03-08T01:07:25.983856+00:00 app[web.1]: ~~~~~~~~~~~~~~~~~^^
+2026-03-08T01:07:25.983856+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.14/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+2026-03-08T01:07:25.983856+00:00 app[web.1]: return util.import_app(self.app_uri)
+2026-03-08T01:07:25.983856+00:00 app[web.1]: ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+2026-03-08T01:07:25.983856+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.14/site-packages/gunicorn/util.py", line 377, in import_app
+2026-03-08T01:07:25.983857+00:00 app[web.1]: mod = importlib.import_module(module)
+2026-03-08T01:07:25.983857+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.14/importlib/__init__.py", line 88, in import_module
+2026-03-08T01:07:25.983858+00:00 app[web.1]: return _bootstrap._gcd_import(name[level:], package, level)
+2026-03-08T01:07:25.983858+00:00 app[web.1]: ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-03-08T01:07:25.983873+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1398, in _gcd_import
+2026-03-08T01:07:25.983873+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+2026-03-08T01:07:25.983873+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+2026-03-08T01:07:25.983896+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+2026-03-08T01:07:25.983896+00:00 app[web.1]: File "<frozen importlib._bootstrap_external>", line 759, in exec_module
+2026-03-08T01:07:25.983896+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+2026-03-08T01:07:25.983897+00:00 app[web.1]: File "/app/my_portfolio/wsgi.py", line 16, in <module>
+2026-03-08T01:07:25.983897+00:00 app[web.1]: application = get_wsgi_application()
+2026-03-08T01:07:25.983897+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.14/site-packages/django/core/wsgi.py", line 13, in get_wsgi_application
+2026-03-08T01:07:25.983897+00:00 app[web.1]: return WSGIHandler()
+2026-03-08T01:07:25.983897+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.14/site-packages/django/core/handlers/wsgi.py", line 118, in __init__
+2026-03-08T01:07:25.983898+00:00 app[web.1]: self.load_middleware()
+2026-03-08T01:07:25.983898+00:00 app[web.1]: ~~~~~~~~~~~~~~~~~~~~^^
+2026-03-08T01:07:25.983898+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.14/site-packages/django/core/handlers/base.py", line 40, in load_middleware
+2026-03-08T01:07:25.983898+00:00 app[web.1]: middleware = import_string(middleware_path)
+2026-03-08T01:07:25.983899+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.14/site-packages/django/utils/module_loading.py", line 30, in import_string
+2026-03-08T01:07:25.983899+00:00 app[web.1]: return cached_import(module_path, class_name)
+2026-03-08T01:07:25.983899+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.14/site-packages/django/utils/module_loading.py", line 15, in cached_import
+2026-03-08T01:07:25.983899+00:00 app[web.1]: module = import_module(module_path)
+2026-03-08T01:07:25.983900+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.14/importlib/__init__.py", line 88, in import_module
+2026-03-08T01:07:25.983900+00:00 app[web.1]: return _bootstrap._gcd_import(name[level:], package, level)
+2026-03-08T01:07:25.983900+00:00 app[web.1]: ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-03-08T01:07:25.983900+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1398, in _gcd_import
+2026-03-08T01:07:25.983900+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+2026-03-08T01:07:25.983901+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1314, in _find_and_load_unlocked
+2026-03-08T01:07:25.983901+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+2026-03-08T01:07:25.983901+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1398, in _gcd_import
+2026-03-08T01:07:25.983901+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+2026-03-08T01:07:25.983902+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1335, in _find_and_load_unlocked
+2026-03-08T01:07:25.983902+00:00 app[web.1]: ModuleNotFoundError: No module named 'whitenoise'
+2026-03-08T01:07:25.983906+00:00 app[web.1]: No module named 'whitenoise'
+2026-03-08T01:07:25.983964+00:00 app[web.1]: [2026-03-08 01:07:25 +0000] [10] [INFO] Worker exiting (pid: 10)
+2026-03-08T01:07:26.006611+00:00 heroku[web.1]: State changed from starting to up
+2026-03-08T01:07:26.080158+00:00 app[web.1]: [2026-03-08 01:07:26 +0000] [2] [ERROR] Worker (pid:10) exited with code 3.
+2026-03-08T01:07:26.081401+00:00 app[web.1]: Traceback (most recent call last):
+2026-03-08T01:07:26.081801+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.14/site-packages/gunicorn/arbiter.py", line 242, in run
+2026-03-08T01:07:26.081802+00:00 app[web.1]: handler()
+2026-03-08T01:07:26.081802+00:00 app[web.1]: ~~~~~~~^^
+2026-03-08T01:07:26.081804+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.14/site-packages/gunicorn/arbiter.py", line 267, in handle_chld
+2026-03-08T01:07:26.081805+00:00 app[web.1]: self.reap_workers()
+2026-03-08T01:07:26.081805+00:00 app[web.1]: ~~~~~~~~~~~~~~~~~^^
+2026-03-08T01:07:26.081805+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.14/site-packages/gunicorn/arbiter.py", line 637, in reap_workers
+2026-03-08T01:07:26.081806+00:00 app[web.1]: raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+2026-03-08T01:07:26.081828+00:00 app[web.1]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+2026-03-08T01:07:26.081890+00:00 app[web.1]: 
+2026-03-08T01:07:26.081890+00:00 app[web.1]: During handling of the above exception, another exception occurred:
+2026-03-08T01:07:26.081891+00:00 app[web.1]: 
+2026-03-08T01:07:26.081891+00:00 app[web.1]: Traceback (most recent call last):
+2026-03-08T01:07:26.082472+00:00 app[web.1]: File "/app/.heroku/python/bin/gunicorn", line 6, in <module>
+2026-03-08T01:07:26.082472+00:00 app[web.1]: sys.exit(run())
+2026-03-08T01:07:26.082472+00:00 app[web.1]: ~~~^^
+2026-03-08T01:07:26.082473+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.14/site-packages/gunicorn/app/wsgiapp.py", line 66, in run
+2026-03-08T01:07:26.082473+00:00 app[web.1]: WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]", prog=prog).run()
+2026-03-08T01:07:26.082473+00:00 app[web.1]: ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-03-08T01:07:26.082474+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.14/site-packages/gunicorn/app/base.py", line 235, in run
+2026-03-08T01:07:26.082474+00:00 app[web.1]: super().run()
+2026-03-08T01:07:26.082475+00:00 app[web.1]: ~~~~~~~~~~~^^
+2026-03-08T01:07:26.082482+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.14/site-packages/gunicorn/app/base.py", line 71, in run
+2026-03-08T01:07:26.082482+00:00 app[web.1]: Arbiter(self).run()
+2026-03-08T01:07:26.082482+00:00 app[web.1]: ~~~~~~~~~~~~~~~~~^^
+2026-03-08T01:07:26.082483+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.14/site-packages/gunicorn/arbiter.py", line 250, in run
+2026-03-08T01:07:26.082483+00:00 app[web.1]: self.halt(reason=inst.reason, exit_status=inst.exit_status)
+2026-03-08T01:07:26.082483+00:00 app[web.1]: ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-03-08T01:07:26.082490+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.14/site-packages/gunicorn/arbiter.py", line 374, in halt
+2026-03-08T01:07:26.082491+00:00 app[web.1]: self.stop()
+2026-03-08T01:07:26.082491+00:00 app[web.1]: ~~~~~~~~~^^
+2026-03-08T01:07:26.082491+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.14/site-packages/gunicorn/arbiter.py", line 454, in stop
+2026-03-08T01:07:26.082491+00:00 app[web.1]: self.reap_workers()
+2026-03-08T01:07:26.082491+00:00 app[web.1]: ~~~~~~~~~~~~~~~~~^^
+2026-03-08T01:07:26.082498+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.14/site-packages/gunicorn/arbiter.py", line 637, in reap_workers
+2026-03-08T01:07:26.082498+00:00 app[web.1]: raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+2026-03-08T01:07:26.082512+00:00 app[web.1]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+2026-03-08T01:07:26.139209+00:00 heroku[web.1]: Process exited with status 1
+2026-03-08T01:07:26.158479+00:00 heroku[web.1]: State changed from up to crashed
+2026-03-08T01:07:40.355431+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=meet-victor-bee93c661a9c.herokuapp.com request_id=c9f8e3d1-45ee-0341-e361-05dffee4d9e7 fwd="" dyno= connect=0ms service=0ms status=503 bytes=567 protocol=http1.1 tls=true tls_version=unknown
+2026-03-08T01:08:42.028052+00:00 app[api]: Log session created by user akomavictor@gmail.com
+2026-03-08T01:09:06.380601+00:00 app[api]: Log session created by user akomavictor@gmail.com
