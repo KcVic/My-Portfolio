@@ -48,10 +48,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
     'home',
     'projects',
     'django_summernote',
     'post_office',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -155,3 +157,6 @@ DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_ADDRESS')
 # Media files (Images, PDFs) uploads
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+if 'CLOUDINARY_URL' in os.environ:
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
