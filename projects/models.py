@@ -8,7 +8,7 @@ class project(models.Model):
         ('maps', 'Maps'),
     )
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
-    image = CloudinaryField('image', default='placeholder.jpg')
+    featured_image = CloudinaryField('image', default='placeholder.jpg')
     title = models.CharField(max_length=100)
     description = models.TextField()
     link = models.URLField(blank=True, null=True)
