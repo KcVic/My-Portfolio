@@ -19,7 +19,7 @@
                 <div class="card h-100 bg-slate-900 border-slate-800 overflow-hidden text-light" style="border: 1px solid #1e293b; transition: all 0.3s;" onmouseover="this.style.borderColor='rgba(16, 185, 129, 0.5)'; this.style.transform='translateY(-5px)';" onmouseout="this.style.borderColor='#1e293b'; this.style.transform='none';">
                     <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal{{project.id}}">
                         <div class="position-relative bg-slate-800 d-flex align-items-center justify-content-center overflow-hidden" style="height: 192px;">
-                            <img src="{{project.featured_image.url}}" alt="{{project.title}}" class="img-fluid w-100 h-100" style="object-fit: cover;">
+                            <img src="{{project.project_image.url}}" alt="{{project.title}}" class="img-fluid w-100 h-100" style="object-fit: cover;">
                         </div>
                     </a>
                     <div class="card-body p-4 d-flex flex-column">
@@ -51,7 +51,7 @@
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body text-center p-0">
-                        <img src="{{project.featured_image.url}}" class="img-fluid rounded shadow-lg" alt="{{project.title}}">
+                        <img src="{{project.project_image.url}}" class="img-fluid rounded shadow-lg" alt="{{project.title}}">
                       </div>
                     </div>
                   </div>
@@ -77,10 +77,8 @@
                 <div class="card h-100 bg-slate-900 border-slate-800 overflow-hidden text-light" style="border: 1px solid #1e293b; transition: all 0.3s;" onmouseover="this.style.borderColor='rgba(16, 185, 129, 0.5)'; this.style.transform='translateY(-5px)';" onmouseout="this.style.borderColor='#1e293b'; this.style.transform='none';">
                     <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal{{project.id}}">
                         <div class="position-relative bg-slate-800 d-flex align-items-center justify-content-center overflow-hidden" style="height: 250px; background-image: radial-gradient(circle, #34d399 1px, transparent 1px); background-size: 20px 20px;">
-                            {% if 'placeholder' not in project.featured_image %}
                             <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(15, 23, 42, 0.8);"></div>
-                            <img src="{{project.featured_image.url}}" alt="{{project.title}}" class="img-fluid w-100 h-100" style="object-fit: cover; position: relative; z-index: 2;">
-                            {% endif %}
+                            <img src="{{project.project_image.url}}" alt="{{project.title}}" class="img-fluid w-100 h-100" style="object-fit: cover; position: relative; z-index: 2;">
                         </div>
                     </a>
                     <div class="card-body p-4 d-flex flex-column">
@@ -110,7 +108,7 @@
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body text-center p-0">
-                        <img src="{{project.featured_image.url}}" class="img-fluid rounded shadow-lg" alt="{{project.title}}">
+                        <img src="{{project.project_image.url}}" class="img-fluid rounded shadow-lg" alt="{{project.title}}">
                       </div>
                     </div>
                   </div>
