@@ -2,6 +2,44 @@
 {% load static %}
 
 {% block content %}
+<style>
+    /* Read more accordion styles */
+    .readmore-btn::after { display: none; }
+    .readmore-btn[aria-expanded="false"] .read-less-text { display: none; }
+    .readmore-btn[aria-expanded="true"] .read-more-text { display: none; }
+    
+    /* Scrollbar styles */
+    .custom-scrollbar::-webkit-scrollbar {
+        height: 8px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: rgba(30, 41, 59, 0.3); 
+        border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(52, 211, 153, 0.4); 
+        border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: rgba(52, 211, 153, 0.8); 
+    }
+    
+    /* Scroll arrow styles */
+    .scroll-arrow {
+        width: 40px; 
+        height: 40px; 
+        background-color: #1e293b; 
+        border: 1px solid #334155; 
+        color: #fff;
+        transition: all 0.3s;
+        opacity: 0.8;
+    }
+    .scroll-arrow:hover {
+        background-color: #34d399;
+        color: #0f172a;
+        opacity: 1;
+    }
+</style>
 <section class="min-vh-100 pb-5" style="padding-top: 120px; padding-left: 1.5rem; padding-right: 1.5rem;">
     <div class="container px-0" style="max-width: 1140px;">
         <!-- Web Applications Header -->
@@ -12,7 +50,11 @@
             </p>
         </div>
         <!-- Web Applications Grid -->
-        <div class="d-flex flex-nowrap overflow-auto gap-4 mb-5 pb-4 hide-scrollbar">
+        <div class="position-relative mb-5">
+            <button class="btn position-absolute top-50 translate-middle-y z-3 rounded-circle d-none d-md-flex align-items-center justify-content-center shadow scroll-arrow" style="left: -20px;" onclick="document.getElementById('webapps-scroll').scrollBy({left: -400, behavior: 'smooth'})">
+                <i class="bi bi-chevron-left fs-5"></i>
+            </button>
+            <div id="webapps-scroll" class="d-flex flex-nowrap overflow-auto gap-4 pb-4 custom-scrollbar" style="scroll-snap-type: x mandatory;">
         {% for project in projects %}
             {% if project.category == 'webapps' %}
             <div class="col-11 col-md-6 col-lg-4 flex-shrink-0" style="max-width: 400px;">
@@ -34,9 +76,22 @@
                                 {% endif %}
                             </div>
                         </div>
-                        <p class="text-slate-400 small mb-4 flex-grow-1" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
-                            {{project.description|striptags}}
-                        </p>
+                        <div class="accordion accordion-flush flex-grow-1 mb-4" id="accordion{{project.id}}">
+                            <div class="accordion-item bg-transparent border-0">
+                                <div class="short-desc{{project.id}} text-slate-400 small" style="display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                                    {{project.description|striptags}}
+                                </div>
+                                <div id="collapse{{project.id}}" class="accordion-collapse collapse mt-2" aria-labelledby="heading{{project.id}}" data-bs-parent="#accordion{{project.id}}">
+                                    <div class="accordion-body p-0 text-slate-400 small">
+                                        {{project.description|striptags}}
+                                    </div>
+                                </div>
+                                <button class="accordion-button collapsed p-0 mt-2 bg-transparent border-0 shadow-none readmore-btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{project.id}}" aria-expanded="false" aria-controls="collapse{{project.id}}" onclick="if(!this.classList.contains('collapsed')) { document.querySelector('.short-desc{{project.id}}').style.display = 'none'; } else { setTimeout(() => document.querySelector('.short-desc{{project.id}}').style.display = '-webkit-box', 350); }">
+                                    <span class="read-more-text" style="color: #34d399; font-size: 0.85rem; font-weight: 600;">Read more</span>
+                                    <span class="read-less-text" style="color: #34d399; font-size: 0.85rem; font-weight: 600;">Read less</span>
+                                </button>
+                            </div>
+                        </div>
                         <div class="d-flex flex-wrap gap-2">
                             <span class="badge rounded-1 fw-normal text-monospace" style="color: rgba(52, 211, 153, 0.8); background: rgba(6, 78, 59, 0.3);">{{project.technology}}</span>
                         </div>
@@ -59,6 +114,10 @@
             </div>
             {% endif %}
         {% endfor %}
+            </div>
+            <button class="btn position-absolute top-50 translate-middle-y z-3 rounded-circle d-none d-md-flex align-items-center justify-content-center shadow scroll-arrow" style="right: -20px;" onclick="document.getElementById('webapps-scroll').scrollBy({left: 400, behavior: 'smooth'})">
+                <i class="bi bi-chevron-right fs-5"></i>
+            </button>
         </div>
 
         <!-- Maps and Visualizations Header -->
@@ -70,7 +129,11 @@
         </div>
 
         <!-- Maps Grid -->
-        <div class="d-flex flex-nowrap overflow-auto gap-4 mb-5 pb-4 hide-scrollbar">
+        <div class="position-relative mb-5">
+            <button class="btn position-absolute top-50 translate-middle-y z-3 rounded-circle d-none d-md-flex align-items-center justify-content-center shadow scroll-arrow" style="left: -20px;" onclick="document.getElementById('maps-scroll').scrollBy({left: -400, behavior: 'smooth'})">
+                <i class="bi bi-chevron-left fs-5"></i>
+            </button>
+            <div id="maps-scroll" class="d-flex flex-nowrap overflow-auto gap-4 pb-4 custom-scrollbar" style="scroll-snap-type: x mandatory;">
         {% for project in projects %}
             {% if project.category == 'maps' %}
             <div class="col-11 col-md-6 col-lg-4 flex-shrink-0" style="max-width: 400px;">
@@ -93,9 +156,22 @@
                                 {% endif %}
                             </div>
                         </div>
-                        <p class="text-slate-400 small mb-4 flex-grow-1" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
-                            {{project.description|striptags}}
-                        </p>
+                        <div class="accordion accordion-flush flex-grow-1 mb-4" id="accordion{{project.id}}">
+                            <div class="accordion-item bg-transparent border-0">
+                                <div class="short-desc{{project.id}} text-slate-400 small" style="display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                                    {{project.description|striptags}}
+                                </div>
+                                <div id="collapse{{project.id}}" class="accordion-collapse collapse mt-2" aria-labelledby="heading{{project.id}}" data-bs-parent="#accordion{{project.id}}">
+                                    <div class="accordion-body p-0 text-slate-400 small">
+                                        {{project.description|striptags}}
+                                    </div>
+                                </div>
+                                <button class="accordion-button collapsed p-0 mt-2 bg-transparent border-0 shadow-none readmore-btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{project.id}}" aria-expanded="false" aria-controls="collapse{{project.id}}" onclick="if(!this.classList.contains('collapsed')) { document.querySelector('.short-desc{{project.id}}').style.display = 'none'; } else { setTimeout(() => document.querySelector('.short-desc{{project.id}}').style.display = '-webkit-box', 350); }">
+                                    <span class="read-more-text" style="color: #34d399; font-size: 0.85rem; font-weight: 600;">Read more</span>
+                                    <span class="read-less-text" style="color: #34d399; font-size: 0.85rem; font-weight: 600;">Read less</span>
+                                </button>
+                            </div>
+                        </div>
                         <div class="d-flex flex-wrap gap-2">
                             <span class="badge rounded-1 fw-normal text-monospace" style="color: rgba(52, 211, 153, 0.8); background: rgba(6, 78, 59, 0.3);">{{project.technology}}</span>
                         </div>
@@ -118,6 +194,10 @@
             </div>
             {% endif %}
         {% endfor %}
+            </div>
+            <button class="btn position-absolute top-50 translate-middle-y z-3 rounded-circle d-none d-md-flex align-items-center justify-content-center shadow scroll-arrow" style="right: -20px;" onclick="document.getElementById('maps-scroll').scrollBy({left: 400, behavior: 'smooth'})">
+                <i class="bi bi-chevron-right fs-5"></i>
+            </button>
         </div>
     </div>
 </section>
