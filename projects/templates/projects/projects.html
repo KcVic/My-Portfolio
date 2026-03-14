@@ -63,9 +63,9 @@
 
         <!-- Maps and Visualizations Header -->
         <div class="mb-5 mt-5">
-            <h2 class="display-6 fw-bold text-light mb-3">2D Maps & Visualizations</h2>
+            <h2 class="display-6 fw-bold text-light mb-3">Maps & Visualizations</h2>
             <p class="text-slate-400 fs-5 mb-0" style="max-width: 700px;">
-                Experiments with canvas, procedural generation, and interactive map interfaces.
+                A colection of cartographic visualisations and interactive map interfaces I have created.
             </p>
         </div>
 
@@ -88,7 +88,9 @@
                                 {% if project.pdf %}
                                 <a href="{% url 'download_pdf' project.pk %}" class="text-slate-400 hover-text-emerald">Download File</a>
                                 {% endif %}
-                                
+                                {% if project.link %}
+                                <a href="{{project.link}}" class="text-slate-400 hover-text-emerald" target="_blank"><i class="bi bi-box-arrow-up-right fs-5"></i></a>
+                                {% endif %}
                             </div>
                         </div>
                         <p class="text-slate-400 small mb-4 flex-grow-1" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
