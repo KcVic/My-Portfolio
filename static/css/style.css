@@ -4,6 +4,14 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body.has-bg-image {
+    background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('../images/background.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
 /* Custom Colors */
 .text-emerald-400 { color: #34d399 !important; }
 .bg-emerald-500 { background-color: #10b981 !important; color: #020617; }
@@ -35,6 +43,7 @@ body {
 .gradient-text {
     background: linear-gradient(to right, #34d399, #06b6d4);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
 }
 

@@ -4,6 +4,14 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body.has-bg-image {
+    background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('../images/background.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
 /* Custom Colors */
 .text-emerald-400 { color: #34d399 !important; }
 .bg-emerald-500 { background-color: #10b981 !important; color: #020617; }
@@ -35,6 +43,7 @@ body {
 .gradient-text {
     background: linear-gradient(to right, #34d399, #06b6d4);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
 }
 
@@ -61,41 +70,4 @@ body {
 }
 .hide-scrollbar::-webkit-scrollbar {
     display: none; /* Chrome, Safari and Opera */
-}
-
-/* Read more accordion styles */
-.readmore-btn::after { display: none; }
-.readmore-btn[aria-expanded="false"] .read-less-text { display: none; }
-.readmore-btn[aria-expanded="true"] .read-more-text { display: none; }
-    
-/* Scrollbar styles */
-.custom-scrollbar::-webkit-scrollbar {
-    height: 8px;
-}
-.custom-scrollbar::-webkit-scrollbar-track {
-    background: rgba(30, 41, 59, 0.3); 
-    border-radius: 4px;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb {
-    background: rgba(52, 211, 153, 0.4); 
-    border-radius: 4px;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: rgba(52, 211, 153, 0.8); 
-}
-    
-/* Scroll arrow styles */
-.scroll-arrow {
-    width: 40px; 
-    height: 40px; 
-    background-color: #1e293b; 
-    border: 1px solid #334155; 
-    color: #fff;
-    transition: all 0.3s;
-    opacity: 0.8;
-}
-.scroll-arrow:hover {
-    background-color: #34d399;
-    color: #0f172a;
-    opacity: 1;
 }
