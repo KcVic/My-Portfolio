@@ -15,6 +15,10 @@ class project(models.Model):
     github_link = models.URLField(blank=True, null=True)
     pdf = models.FileField(upload_to='projects/', blank=True, null=True)
     technology = models.CharField(max_length=100)
+    created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+
+    class Meta:
+        ordering = ['-created_at']
 
     def __str__(self):
         return self.title
